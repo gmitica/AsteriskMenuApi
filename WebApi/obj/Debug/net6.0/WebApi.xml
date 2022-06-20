@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:WebApi.Controllers.LocationController.GetAllCountries">
+            <summary>
+            Get all countries
+            </summary>
+        </member>
+        <member name="M:WebApi.Controllers.LocationController.GetAllSatesOfCºountry(System.Int32)">
+            <summary>
+            Get all states of country
+            </summary>
+            <param name="countryId">CountryId to search</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.LocationController.GetAllCitiesOfState(System.Int32)">
+            <summary>
+            Get all cities of state
+            </summary>
+            <param name="stateId">StateId to seatch</param>
+            <returns>List with founded cities</returns>
+        </member>
+        <member name="M:WebApi.Data.Access.ApplicationDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            TODO: Quitar cuando se ponga en producción
+        </member>
+        <member name="M:WebApi.Helpers.EmailTemplate.ResetPassword(System.Nullable{System.Guid})">
+            TODO
+        </member>
+    </members>
+</doc>

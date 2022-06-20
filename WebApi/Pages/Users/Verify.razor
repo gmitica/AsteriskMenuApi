@@ -1,0 +1,34 @@
+@page "/Users/Verify/{Token:guid}"
+@using WebApi.Services.UserService
+@inject IUserService _userService;
+
+<div class="text-center">
+    <h3>Verificación de cuenta</h3>
+    <p>@Message</p>
+    <button class="btn btn-primary" style="@Style" @onclick="VerifyAccount">VERIFICAR!</button>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public Guid Token { get; set; }
+
+    private string Message { get; set; }
+    private string Style { get; set; }
+
+    private void VerifyAccount()
+    {
+        Style = "display: none;";
+        Message = "Espere...";
+        bool result = _userService.ActivateUser(Token);
+        if (result)
+        {
+            Message = "Cuenta verificada, puedes iniciar sessión en la aplicación";
+        }
+        else
+        {
+            Message = "Error al verificar la cuenta, si el error persiste, contacte con nostros.";
+        }
+    }
+}
